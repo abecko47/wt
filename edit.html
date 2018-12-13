@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
-    <title>Create new Article</title>
+    <title>Edit Article</title>
 </head>
 <body>
 <nav class="nav-bar" style="position: absolute;">
-    <a href="articles.html"><i class="fas fa-arrow-left" id="arrow"></i></a>
+    <a onclick="window.history.go(-1); return false;" style="cursor:pointer"><i class="fas fa-arrow-left" id="arrow"></i></a>
     <span><i class="fas fa-toggle-off" id="toggle-view"></i></span>
 </nav>
 
@@ -32,16 +35,12 @@
             <p><input class="article-input" type="text" placeholder="Image URL" name="img-file" id="image-url" /></p>
             <h4 class="h4-article-header">Article Content</h4>
             <input id="title-article" class="article-input" spellcheck="true" required type="text" placeholder="Article Name" name="article-name" />
-            <p><div id="textarea-editable" aria-required="true" class="textarea-editable" contenteditable="true" placeholder="Article Content" title="Required"></div></p>
+            <p><textarea id="textarea-editable" aria-required="true" contenteditable="true" placeholder="Article Content" title="Required"></textarea></p>
             <p>
                 <label for="tags">Tags: </label>
                 <input list="tags-list" id="tags" name="tags-input" />
 
                 <datalist id="tags-list">
-                    <option value="Game developing">
-                    <option value="Unity">
-                    <option value="JS">
-                    <option value="Publisher">
                 </datalist>
             </p>
             <!--<p><label for="article-date">Date: </label>-->

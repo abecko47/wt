@@ -1,4 +1,4 @@
-var server="wt.kpi.fei.tuke.sk";
+
 $("a").each(function () {
         $(this).attr("title", $(this).text());
 });

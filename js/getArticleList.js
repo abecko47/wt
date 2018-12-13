@@ -13,8 +13,8 @@
 var articlesPerPage=10;
 
 //Doménové meno servera s databázou článkov
-//Domain name of the server with the article database
-var server="wt.kpi.fei.tuke.sk";
+// //Domain name of the server with the article database
+// var server="wt.kpi.fei.tuke.sk";
 var offset = 0;
 //Výpis prvých článkov a vytvorenie navigačného panela
 //Write first articlesPerPage articles to html and create a navigation part
@@ -58,12 +58,12 @@ function navHtml(startIndex, articlesCount, articlesTotalCount){
 }
 
 function nextArticles() {
-    offset++;
+    offset += 10;
     writeArticles2Html(offset, articlesPerPage, server, 'clanky', 'navigacia');
 }
 
 function previousArticles() {
-    offset--;
+    offset -= 10;
     writeArticles2Html(offset, articlesPerPage, server, 'clanky', 'navigacia');
 }
 

@@ -25,7 +25,7 @@ $(document).ready(function(event) {
 
         var postData = {
             "title": $("#title-article").val(),
-            "content": $("#textarea-editable").text(),
+            "content": $("#textarea-editable").val(),
             "imageLink": $("#image-url").val(),
             "author": $("#author-name").val() + " " + $("#author-mail").val(),
             "tags": $("#tags").val().split(",")

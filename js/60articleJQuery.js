@@ -1,7 +1,7 @@
 /*
  * Created by Stefan Korecko, 2016-18
  */
-var server="wt.kpi.fei.tuke.sk";
+// var server="wt.kpi.fei.tuke.sk";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //KĂłd, ktorĂ˝ sa vykonĂˇ pri naÄŤĂ­tanĂ­ skriptu
 //Code executed when the script is loaded
@@ -45,6 +45,7 @@ function writeArticle2Html(articleElmId){
                 $.get("templates/article.mst",      //get() je vlastne specialna verzia ajax()
                     function (template) {
                         $("#"+articleElmId).html(Mustache.render(template, article));
+
                     }
                     ,"text");
                 $.get("templates/get_title.mst",      //get() je vlastne specialna verzia ajax()
@@ -55,6 +56,11 @@ function writeArticle2Html(articleElmId){
                 $.get("templates/edit-link.mst",      //get() je vlastne specialna verzia ajax()
                     function (template) {
                         $("#edit-link").html(Mustache.render(template, article));
+                    }
+                    ,"text");
+                $.get("templates/delete-article.mst",      //get() je vlastne specialna verzia ajax()
+                    function (template) {
+                        $("#delete-article").html(Mustache.render(template, article));
                     }
                     ,"text");
             },
@@ -78,8 +84,17 @@ function writeArticle2Html(articleElmId){
                 errorDialog(textStatus+"("+errorThrown+")");
             }
         });
+        window.setTimeout(changehtml,100);
+
     }
 }
+
+
+function changehtml() {
+    content = $("#content-article").text();
+    $("#content-article").html(content);
+}
+
 
 /**
  * Sparsuje query string do objektu
@@ -119,25 +134,73 @@ $(document).ready(function(event) {
         var server="http://wt.kpi.fei.tuke.sk";
 
         var postData = {
-            "title": $("#title-article").val(),
-            "content": $("#textarea-editable").text(),
-            "imageLink": $("#image-url").val(),
-            "author": $("#author-name").val() + " " + $("#author-mail").val(),
-            "tags": $("#tags").val().split(",")
+            "author": $("#comment-author").val(),
+            "text": $("#textarea-editable").text()
         };
 
         var jsonData = JSON.stringify(postData);
 
         $.ajax({
             type: "POST",
-            url: server+"/api/article/",
+            url: server+"/api/article/"+queryString2obj().id+"/comment",
             dataType: 'json',
             async: false,
             data: jsonData,
             contentType: 'application/json',
 
             success: function(result){
-                alert(JSON.stringify(result));
+                alert("Comment was added succesfully.");
+                location.reload();
+            },
+            error: function (error) {
+                alert("error: "+ JSON.stringify(error));
+            }
+        });
+    });
+});
+
+function deleteComment(commentID) {
+    var server="http://wt.kpi.fei.tuke.sk";
+    $.ajax({
+        type: "DELETE",
+        url: server+"/api/comment/"+commentID,
+        async: false,
+
+        success: function(result){
+            alert("Comment is deleted.");
+            location.reload();
+        },
+        error: function (error) {
+            alert("error: "+ JSON.stringify(error));
+        }
+    });
+}
+
+
+$(document).ready(function(event) {
+    $('form[name=edit-comment]').submit(function(event){
+        event.preventDefault();
+        var server="http://wt.kpi.fei.tuke.sk";
+
+        var editid = $("#hidden-edit-id").val();
+        var postData = {
+            "author": $("#edit-author").val(),
+            "text": $("#edit-editable").text()
+        };
+
+        var jsonData = JSON.stringify(postData);
+
+        $.ajax({
+            type: "PUT",
+            url: server+"/api/comment/"+editid,
+            dataType: 'json',
+            async: false,
+            data: jsonData,
+            contentType: 'application/json',
+
+            success: function(result){
+                alert("Comment was edited succesfully.");
+                location.reload();
             },
             error: function (error) {
                 alert("error: "+ JSON.stringify(error));

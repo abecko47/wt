@@ -209,6 +209,17 @@ ul.breadcrumb li a:hover {
     transition: 200ms all;
 }
 
+.fa-trash {
+    color: black;
+    font-size: 2rem;
+    transition: 200ms all;
+}
+
+.fa-trash:hover {
+    color: grey;
+    transition: 200ms all;
+}
+
 ol.content{
     list-style-type: none;
 }
@@ -310,6 +321,11 @@ li {
     cursor: pointer;
 }
 
+.fa-comments {
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
 .hidden-content {
     position: fixed;
     top: 50px;
@@ -334,6 +350,23 @@ li {
     align-content: center;
     align-items: center;
 }
+
+.fas {
+    margin: 5px;
+}
+
+.modal {
+    position: fixed;
+    top: 30vh;
+    left: 37.5vw;
+    height: 40vh;
+    width: 25vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 10000;
+}
+
 @media only screen and (max-width: 738px) {
     .fa-arrow-left {
         font-size: 2rem;
@@ -344,6 +377,14 @@ li {
     }
 
     .fa-edit {
+        font-size: 1rem;
+    }
+
+    .fa-trash {
+        font-size: 1rem;
+    }
+
+    .fa-comments {
         font-size: 1rem;
     }
 

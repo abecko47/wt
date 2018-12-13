@@ -1,1 +1,1 @@
-<span onclick="delete({{id}})"><i class="fas fa-trash"></i></span>
+<i class="fas fa-trash" onclick="deleteArticle({{id}})" style="cursor:pointer;"></i>
