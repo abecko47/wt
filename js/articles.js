@@ -81,6 +81,7 @@ function showModalEdit(commentID) {
     $("#edit-editable").text($("#content-"+commentID).text());
     $("#edit-author").val($("#author-"+commentID).text());
     $("#submit-edit").removeAttr("disabled");
+
 }
 
 var showComments = false;

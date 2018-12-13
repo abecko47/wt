@@ -5,6 +5,9 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="196752905907-ouslbkerq8k4k07mpfnknj6jdqlgbdgc.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -12,10 +15,19 @@
     <title>Edit Article</title>
 </head>
 <body>
+<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="position:absolute; right: 10px;top:10px;"></div>
+
 <nav class="nav-bar" style="position: absolute;">
+    <span><i class="fas fa-bars" id="nav-menu"></i></span>
     <a onclick="window.history.go(-1); return false;" style="cursor:pointer"><i class="fas fa-arrow-left" id="arrow"></i></a>
-    <span><i class="fas fa-toggle-off" id="toggle-view"></i></span>
 </nav>
+
+<div class="hidden-content" id="hidden-articles">
+    <ul class="site-map" id="nav-articles">
+        <span><i class="fas fa-toggle-off" id="toggle-view"></i></span>
+        <a href="articles.html"><i class="fas fa-book-open" style="font-size: 1rem"></i></a>
+    </ul>
+</div>
 
 <div class="page-container">
     <ul class="breadcrumb">
@@ -65,4 +77,6 @@
 <script src="js/main.js"></script>
 <script src="js/articles.js"></script>
 <script src="js/edit.js"></script>
+<script src="js/google_signin.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </html>

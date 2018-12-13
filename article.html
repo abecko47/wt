@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="196752905907-ouslbkerq8k4k07mpfnknj6jdqlgbdgc.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
@@ -10,12 +13,19 @@
 </head>
 <body>
 <nav class="nav-bar">
+    <span><i class="fas fa-bars" id="nav-menu"></i></span>
     <a href="articles.html"><i class="fas fa-arrow-left" id="arrow"></i></a>
-    <span id="edit-link"></span>
-    <span id="delete-article"></span>
-    <span><i class="fas fa-toggle-off" id="toggle-view"></i></span>
 </nav>
 
+<div class="hidden-content" id="hidden-articles">
+    <ul class="site-map" id="nav-articles">
+        <span id="edit-link"></span>
+        <span id="delete-article"></span>
+        <span><i class="fas fa-toggle-off" id="toggle-view"></i></span>
+    </ul>
+</div>
+
+<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="position:absolute; right: 10px;top:10px;"></div>
 <div class="page-container">
     <ul class="breadcrumb">
         <li><a href="index.html">main</a></li>
@@ -23,6 +33,7 @@
         <li id="get-title"></li>
     </ul>
 </div>
+
     <article id="article" class="page-container">
     </article>
     <article id="comments" class="page-container"></article>
@@ -58,11 +69,13 @@
 </div>
 </body>
 <script src="js/jquery.js"></script>
-<script src="js/configure.js"></script>
+<script src="js/config.js"></script>
 <script src="js/mustache.js"></script>
 <script src="js/mustacheRenderer.js"></script>
 <script src="js/60articleJQuery.js"></script>
 <script src="js/change-see.js"></script>
 <script src="js/articles.js"></script>
 <script src="js/editcomment.js"></script>
+<script src="js/google_signin.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </html>

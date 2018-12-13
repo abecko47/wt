@@ -220,6 +220,17 @@ ul.breadcrumb li a:hover {
     transition: 200ms all;
 }
 
+.fa-book-open {
+    color: black;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.fa-book-open:hover {
+    color: grey;
+    transition: 200ms all;
+}
+
 ol.content{
     list-style-type: none;
 }
@@ -326,9 +337,11 @@ li {
     cursor: pointer;
 }
 
+
+
 .hidden-content {
     position: fixed;
-    top: 50px;
+    top: 70px;
     left: 30px;
     display: none;
 }
@@ -385,6 +398,10 @@ li {
     }
 
     .fa-comments {
+        font-size: 1rem;
+    }
+
+    .fa-book-open {
         font-size: 1rem;
     }
 
