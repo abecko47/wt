@@ -1,0 +1,54 @@
+<!--* vypisClankov means list articles-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Article List</title>
+</head>
+<body>
+
+<nav class="nav-bar">
+    <span><i class="fas fa-bars" id="nav-menu"></i></span>
+    <a href="index.html"><i class="fas fa-arrow-left" id="arrow"></i></a>
+</nav>
+
+<div class="hidden-content" id="hidden-articles">
+    <ul class="site-map" id="nav-articles">
+        <li><button class="navbutton" onclick="previousArticles();">Previous</button></li>
+        <li><button class="navbutton" onclick="nextArticles();">Next</button></li>
+        <span><i class="fas fa-toggle-off" id="toggle-view"></i></span>
+        <a href="new.html"><i class="fas fa-plus" style="font-size: 1rem"></i></a>
+    </ul>
+</div>
+
+<div class="page-container">
+    <ul class="breadcrumb">
+        <li><a href="index.html">main</a></li>
+        <li>articles</li>
+    </ul>
+
+    <div class="article-list">
+        <div class="search-container">
+            <input class="article-input" type="text" id="author" placeholder="Author" style="width: 100%; margin-bottom: 5px; font-size: 1rem;">
+            <input class="article-input" type="text" id="text" placeholder="Text" style="width: 100%;margin-bottom: 5px; font-size: 1rem;">
+            <input class="article-input" type="text" id="title" placeholder="Title" style="width: 100%;margin-bottom: 5px; font-size: 1rem;">
+            <button id="find" onclick="search();" class="blog-button">Search</button>
+            <a href="new.html"><i class="fas fa-plus"></i></a>
+        </div>
+<main id="clanky"></main>
+<div>
+    <nav id="navigacia"></nav>
+</div>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/mustache.js"></script>
+<script src="js/mustacheRenderer.js"></script>
+<script src="js/getArticleList.js"></script>
+<script src="js/change-see.js"></script>
+</body>
+</html>

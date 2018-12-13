@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Article</title>
+</head>
+<body>
+<nav class="nav-bar">
+    <a href="articles.html"><i class="fas fa-arrow-left" id="arrow"></i></a>
+    <span id="edit-link"></span>
+    <span id="delete-article"></span>
+    <span><i class="fas fa-toggle-off" id="toggle-view"></i></span>
+</nav>
+
+<div class="page-container">
+    <ul class="breadcrumb">
+        <li><a href="index.html">main</a></li>
+        <li><a href="articles-html.html">articles</a></li>
+        <li id="get-title"></li>
+    </ul>
+</div>
+    <article id="article" class="page-container">
+    </article>
+    <article id="comments" class="page-container"></article>
+<div class="page-container">
+    <section class="new-article-body">
+        <h1 class="h1-article-header">Create new comment</h1>
+        <form id="comment-form" name="new-comment">
+            <fieldset>
+                <legend>Comment</legend>
+                <p><input id="comment-author" class="article-input" spellcheck="true" required type="text" placeholder="Name" name="comment-name" /></p>
+                <p><div id="textarea-editable" aria-required="true" class="textarea-editable" contenteditable="true" placeholder="Write down Your comment here" title="Required"></div></p>
+                <div class="buttons-in-new"><input disabled type="submit" name="submit" class="blog-button" value="Submit" id="submit"></div>
+            </fieldset>
+        </form>
+    </section>
+</div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/mustache.js"></script>
+<script src="js/mustacheRenderer.js"></script>
+<script src="js/60articleJQuery.js"></script>
+<script src="js/change-see.js"></script>
+<script src="js/articles.js"></script>
+</html>

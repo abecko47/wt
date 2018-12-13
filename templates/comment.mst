@@ -1,0 +1,9 @@
+    <h1 class="h1-article-header">Comments</h1>
+    {{#comments}}
+    <article>
+            <p><strong>{{author}}</strong></p>
+            <p class="article-metainfo">Date created: {{dateCreated}}<br />Last Update: {{lastUpdated}}</p>
+            <p class="content">{{text}}</p>
+            <hr>
+    </article>
+    {{/comments}}

@@ -1,0 +1,9 @@
+    <div class="content">
+    {{#articles}}
+    <div class="article-list-block">
+                <p class="article-metainfo"><strong>{{dateCreated}}<span> • </span>{{author}}</strong></p>
+                <h3 class="h3-article-header-list">{{title}}</h3>
+                <a class="read-more" href="article.html?id={{id}}">read article</a>
+    </div>
+    {{/articles}}
+    </div>

@@ -1,0 +1,13 @@
+        <article>
+        <article class="article">
+                <h1 class="h1-article-header">{{title}}</h1>
+                <p class="article-metainfo"><strong>{{dateCreated}}<span> • </span>{{author}}</strong><br /><strong>Last Update: {{lastUpdated}}</strong></p>
+            <p class="content">{{content}}</p>
+            <figure>
+                     <div class="img-container">
+                          <img class="default-img" src="{{imageLink}}" />
+                     </div>
+            </figure>
+            <p>Tags: {{tags}}</p>
+
+            </article>

@@ -1,0 +1,1 @@
+<a href="edit.html?author={{author}}&title={{title}}&image={{imageLink}}&tags={{tags}}&content={{content}}&id={{id}}"><i class="fas fa-edit" id="arrow"></i></a>
