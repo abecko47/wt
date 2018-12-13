@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="196752905907-ouslbkerq8k4k07mpfnknj6jdqlgbdgc.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <title>Article</title>
+</head>
+<body>
+<nav class="nav-bar">
+    <a href="articles.html"><i class="fas fa-arrow-left" id="arrow"></i></a>
+</nav>
+
+<div class="callout large primary">
+    <div class="row column text-center">
+        <h2><span id="edit-link"></span>
+        <span id="delete-article"></span>
+        <span><i class="fas fa-toggle-off" id="toggle-view"></i></span></h2>
+        <h1><h3><a href="index.html">main</a></h3>
+            <h3><a href="articles.html">articles</a></h3>
+            <h3 id="get-title"></h3></h1>
+    </div>
+</div>
+
+
+<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="position:absolute; right: 10px;top:10px;"></div>
+
+
+    <article id="article" class="row">
+    </article>
+    <article id="comments" class="row"></article>
+<article id="newcomm" class="page-container"><i class="fas fa-comments" onclick="toggleComments();"></i></article>
+
+
+<div class="page-container" style="display: none;" id="new-comment-container">
+    <section class="new-article-body">
+        <h1 class="h1-article-header">Create new comment</h1>
+        <form id="comment-form" name="new-comment">
+            <fieldset>
+                <legend>New comment</legend>
+                <p><input id="comment-author" class="article-input" spellcheck="true" required type="text" placeholder="Name" name="comment-name" /></p>
+                <p><div id="textarea-editable" aria-required="true" class="textarea-editable" contenteditable="true" placeholder="Write down Your comment here" title="Required"></div></p>
+                <div class="buttons-in-new"><input disabled type="submit" name="submit" class="blog-button" value="Submit" id="submit"></div>
+            </fieldset>
+        </form>
+    </section>
+</div>
+<div class="modal" id="edit-comment" style="display:none;background: white;">
+        <section class="new-article-body" style="background: white;">
+            <i class="fas fa-times-circle" style="cursor: pointer;" onclick="$('#edit-comment').fadeOut();"></i>
+            <form id="edit-form" name="edit-comment">
+                <fieldset>
+                    <legend>Edit comment</legend>
+                    <input type="hidden" value="" id="hidden-edit-id" />
+                    <p><input id="edit-author" class="article-input" spellcheck="true" required type="text" placeholder="Name" name="comment-name" /></p>
+                    <p><div id="edit-editable" aria-required="true" class="textarea-editable" contenteditable="true" placeholder="Write down Your comment here" title="Required"></div></p>
+                    <div class="buttons-in-new"><input disabled type="submit" name="submit" class="blog-button" value="Submit" id="submit-edit"></div>
+                </fieldset>
+            </form>
+        </section>
+</div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/config.js"></script>
+<script src="js/mustache.js"></script>
+<script src="js/mustacheRenderer.js"></script>
+<script src="js/60articleJQuery.js"></script>
+<script src="js/change-see.js"></script>
+<script src="js/articles.js"></script>
+<script src="js/editcomment.js"></script>
+<!--<script src="js/google_signin.js"></script>-->
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+</html>
